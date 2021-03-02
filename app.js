@@ -299,7 +299,7 @@ var timing = function(){
     if((value >= 0) && (lifes < 6)){
         time.innerText = "Tempo restante: "+ value;
     }
-    if(num == 0){
+    if(num != 'Tempo restante: 0'){
         if(ts == false){
             victory();
             ts = true;
