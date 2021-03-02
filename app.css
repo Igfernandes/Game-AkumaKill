@@ -1,0 +1,341 @@
+/* GLOBALS CLASS */
+
+
+html {
+    
+}
+
+
+body{
+    height: 99.8vh;
+    background: url(./img/background-start.jpg) no-repeat center center scroll;
+    background-size: cover;
+    overflow: hidden;
+}
+
+.filter_wallpaper{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 1010vh;
+    background-color: #000;
+    opacity: .2;
+    z-index: 1;
+}
+
+
+/* START ITENS */ 
+
+.title-start{
+    position: relative;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: clamp(1.4rem, 4rem, 6vw );
+    color: #fff;
+    text-align: center;
+    text-shadow: 1px 1px 5px black;
+    z-index: 10;
+}
+
+.btn-start{
+    position: relative;
+    text-align: center;
+    z-index: 30;
+}
+
+.btn-start button{
+    font-size: 2rem;
+    letter-spacing: 2.5px;
+    color: #fff;
+    background: transparent;
+    padding: 10px 30px;
+    border: 2px solid #fff;
+    text-shadow: 1px 1px 1px #000;
+    cursor: pointer;
+}
+
+/* SELECT DIFICULTY */
+
+.select-dificulty{
+    position: relative;
+    text-align: center;
+    z-index: 10;
+}
+
+.select-dificulty select{
+    position: absolute;
+    font-size: 2rem;
+    bottom: 0;
+    border: 2px solid #fff;
+    color: #fff;
+    background: transparent;
+    transform: translate(-50%, 150%);
+    padding: 10px 15px;
+    text-shadow: 1px 1px 2px #000;
+}
+
+.select-dificulty select option{
+    color: #000;
+}
+.select-dificulty select option:checked{
+    color: rgb(62, 89, 177);
+    border: 2px solid #fff;
+}
+.select-dificulty select:focus{
+    outline-style: none;
+}
+
+/* METERS */ 
+
+.meters{
+    position: absolute;
+    display: none;
+    bottom: 0;
+    left: 0;
+    width: 24%;
+    background-color: rgba(255, 255, 255, 0.815);
+    padding: 5px 50px 5px 20px;
+    z-index: 5;
+}
+.meters .lifes{
+    width: 30px;
+    height: 90px;
+    display: flex;
+    margin: 4% 0;
+}
+.meters .lifes img{
+    width: 100%;
+    margin: 0 15px;
+}
+
+.meters .chronometer{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+.meters .chronometer p{
+    margin: 0;
+}
+
+/* ELEMENTS CLASS */ 
+
+.akuma_actions{
+    position: absolute;
+    box-sizing: border-box;
+    z-index: 50;
+}
+
+.size-small{
+    width: 130px;
+    height: 130px;
+    padding: 20px;
+}
+
+.size-medium{
+    width: 200px;
+    height: 200px;
+}
+
+.size-big{
+    width: 250px;
+    height: 250px;
+}
+
+
+
+/* ITENS CLASS */
+
+.akuma_actions img{
+    position: absolute;
+    width: 100%;
+}
+
+.akuma_actions .fire{
+    transform: translateY(-25%);
+    z-index: 1;
+    opacity: 0;
+    
+}
+
+.akuma_actions .akuma{
+    animation: move 1s;
+    animation-direction: alternate-reverse;
+    animation-iteration-count: infinite;
+    transition: all 1s ease-in-out;
+    z-index: 2;
+}
+
+/* FAIL ALERT */ 
+.alert-fail{
+    display: none;
+    position: relative;
+    text-align: center;
+    transform: translateY(20%);
+    opacity: 0;
+    z-index: 30;
+}
+
+.restart{
+    display: inline;
+    position: relative;
+    top: 15%;
+    left: 35%;
+    padding: 100px;
+    z-index: 35;
+}
+
+.go-back{
+    position: relative;
+    top: 5%;
+    left: 35%;
+    position: relative;
+    left: 35%;
+    padding: 100px;
+    z-index: 35;
+}
+
+.restart button, .go-back button{
+    font-family: fantasy;
+    color: red;
+    font-size: 2rem;
+    letter-spacing: 4px;
+    background: #ffff;
+    border: 2px solid red;
+}
+
+/* ICON VICTORY */
+
+.icon-victory{
+    position: relative;
+    text-align: center;
+    transform: translateY(20%);
+    opacity: 0;
+    animation: alert-two 1s;
+    animation-fill-mode: forwards;
+    z-index: 30;
+}
+
+
+/* TRADE BACKGROUND */ 
+
+@keyframes trade{
+    from{
+        opacity: 0;
+        background-color: rgb(233, 233, 233);
+    }to{
+        opacity: 1;
+        background-color: rgb(250, 251, 252);
+    }
+}
+
+@keyframes trade-reverse{
+    from{
+        opacity: 1;
+        background-color: aliceblue;
+    }to{
+        opacity: .2;
+        background-color: black;
+    }
+}
+
+/* MOVE ANIMATION */
+
+@keyframes move{
+    from{
+        transform: translateY(0);
+    }to{
+        transform: translateY(20px);
+    }
+}
+
+
+/* OPACITY ANIMATION */
+
+
+@keyframes opacity{
+    from{
+        opacity: 0;
+    }to{
+        opacity: 1;
+    }
+}
+
+
+/* ALERT FAIL */ 
+
+@keyframes alert{
+    from{
+        opacity: 0;
+        transform: translateY(20%) scale(4);
+    }to{
+        opacity: 1;
+        transform: translateY(20%) scale(1);
+    }
+}
+
+@keyframes alert-two{
+    from{
+        opacity: 0;
+        transform: translateY(-40%) scale(4);
+    }to{
+        opacity: 1;
+        transform: translateY(-40%) scale(1);
+    }
+}
+
+
+
+/* MEDIA QUERY */
+
+@media (max-width: 450px){
+    .title-alert{
+        transform: translateY(100%);
+    }
+    .btn-start button{
+        transform: translateY(180%);
+    }
+    .select-dificulty select{
+        transform: translate(-50%, 320%);
+    }
+    .meters{
+        width: 100%;
+        text-align: center;
+        padding: 0;
+    }
+    .meters .lifes{
+        width: 100%;
+        justify-content: center;
+    }
+    .meters .lifes img{
+        width: 30px;
+        margin: 0 20px 0 15px;
+    }
+    .chronometer p{
+        padding-right: 25px;
+    }
+    .alert-fail img{
+        width: 80%;
+        transform: translateY(-20%);
+    }
+    .restart{
+        top: 2%;
+        padding: 0 !important;
+        left: 0;
+        display: block;
+        text-align: center;
+    }
+    .go-back{
+        top: 6%;
+        left: 0;
+        display: block;
+        text-align: center;
+        padding: 0 !important;
+    }
+}
+@media (max-width: 320px){
+    .alert-fail img{
+        width: 90%;
+        transform: translateY(-20%);
+    }
+
+}
