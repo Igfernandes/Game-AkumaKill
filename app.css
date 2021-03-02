@@ -293,6 +293,9 @@ body{
 /* MEDIA QUERY */
 
 @media (max-width: 450px){
+    .filter_wallpaper{
+        height: 100vh;
+    }
     .title-alert{
         transform: translateY(100%);
     }
