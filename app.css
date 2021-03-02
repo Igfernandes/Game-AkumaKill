@@ -145,6 +145,9 @@ body{
 
 /* ITENS CLASS */
 
+.akuma_actions{
+    position: absolute;
+}
 .akuma_actions img{
     position: absolute;
     width: 100%;
@@ -293,8 +296,11 @@ body{
 /* MEDIA QUERY */
 
 @media (max-width: 450px){
+    body{
+        overflow-y: hidden;
+    }
     .filter_wallpaper{
-        height: 100vh;
+       overflow-y: hidden;
     }
     .title-alert{
         transform: translateY(100%);
@@ -306,6 +312,7 @@ body{
         transform: translate(-50%, 320%);
     }
     .meters{
+        bottom: -11%;
         width: 100%;
         text-align: center;
         padding: 0;

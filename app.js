@@ -292,9 +292,10 @@ var loop = function(){
 
 
 //TIME PASS
-var num = time.innerText;
+
 var ts = false;
 var timing = function(){ 
+    var num = time.innerText;
     value--;
     if((value >= 0) && (lifes < 6)){
         time.innerText = "Tempo restante: "+ value;
